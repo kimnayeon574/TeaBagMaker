@@ -34,7 +34,8 @@
             this.teaTime = new System.Windows.Forms.Label();
             this.timeResult = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Timer = new System.Windows.Forms.Timer(this.components);
+            this.result = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbBox
@@ -45,6 +46,7 @@
             this.cbBox.Name = "cbBox";
             this.cbBox.Size = new System.Drawing.Size(363, 29);
             this.cbBox.TabIndex = 0;
+            this.cbBox.SelectedIndexChanged += new System.EventHandler(this.cbBox_SelectedIndexChanged);
             // 
             // btn
             // 
@@ -55,6 +57,7 @@
             this.btn.TabIndex = 1;
             this.btn.Text = "담그기 !";
             this.btn.UseVisualStyleBackColor = true;
+            this.btn.Click += new System.EventHandler(this.btn_Click);
             // 
             // teaTime
             // 
@@ -62,9 +65,8 @@
             this.teaTime.Font = new System.Drawing.Font("굴림", 14F);
             this.teaTime.Location = new System.Drawing.Point(12, 171);
             this.teaTime.Name = "teaTime";
-            this.teaTime.Size = new System.Drawing.Size(65, 19);
+            this.teaTime.Size = new System.Drawing.Size(0, 19);
             this.teaTime.TabIndex = 2;
-            this.teaTime.Text = "시간 : ";
             // 
             // timeResult
             // 
@@ -86,11 +88,27 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "2019.05.24 3203 김나연";
             // 
+            // Timer
+            // 
+            this.Timer.Interval = 1000;
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
+            // result
+            // 
+            this.result.AutoSize = true;
+            this.result.Font = new System.Drawing.Font("굴림", 16F);
+            this.result.Location = new System.Drawing.Point(12, 190);
+            this.result.Name = "result";
+            this.result.Size = new System.Drawing.Size(118, 22);
+            this.result.TabIndex = 5;
+            this.result.Text = "남은시간 : ";
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 303);
+            this.Controls.Add(this.result);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.timeResult);
             this.Controls.Add(this.teaTime);
@@ -100,6 +118,7 @@
             this.MaximizeBox = false;
             this.Name = "Form";
             this.Text = "차 우리기";
+            this.Load += new System.EventHandler(this.Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,7 +131,8 @@
         private System.Windows.Forms.Label teaTime;
         private System.Windows.Forms.Label timeResult;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer Timer;
+        private System.Windows.Forms.Label result;
     }
 }
 
