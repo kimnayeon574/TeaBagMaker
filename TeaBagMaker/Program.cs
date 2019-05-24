@@ -15,7 +15,7 @@ namespace TeaBagMaker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new teaForm());
+            Application.Run(new Form1());
         }
     }
 }

@@ -9,26 +9,11 @@ using System.Windows.Forms;
 
 namespace TeaBagMaker
 {
-    public partial class teaForm : Form
+    public partial class Form1 : Form
     {
-        string[] teaBag = { "홍차", "녹차", "루이보스차", "국화차" };
-        public teaForm()
+        public Form1()
         {
             InitializeComponent();
         }
-
-        private void teaForm_Load(object sender, EventArgs e)
-        {
-            for(int i=0; i < teaBag.Length; i++)
-            {
-                this.cbBox.Items.Add(teaBag[i]);
-            }
-            if(this.cbBox.Items.Count > 0)
-            {
-                this.cbBox.SelectedIndex = 0;
-            }
-        }
-
-        
     }
 }
